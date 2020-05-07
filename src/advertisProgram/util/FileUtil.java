@@ -28,11 +28,8 @@ public class FileUtil {
             Map<String, User> userMap = (Map<String, User>) deserialization;
             objectInputStream.close();
             return userMap;
-
         } catch (IOException e) {
-
-            System.out.println("Dont found");
-
+            e.printStackTrace();
         }catch (ClassNotFoundException e){
             System.out.println(e.getMessage());
         }
@@ -57,7 +54,7 @@ public class FileUtil {
            objectInputStream.close();
            return item;
        }catch (IOException e){
-           System.out.println(e.getMessage());
+           e.printStackTrace();
        }catch (ClassNotFoundException e){
            System.out.println(e.getMessage());
        }

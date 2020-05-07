@@ -66,8 +66,11 @@ public class AdverMain implements Commands {
             } else {
                 System.out.println("User already exists!");
             }
-        } catch (ArrayIndexOutOfBoundsException | IOException | ClassNotFoundException e) {
+        } catch (ArrayIndexOutOfBoundsException | ClassNotFoundException e) {
             System.out.println("Wrong Data!");
+        }catch (IOException e){
+            e.printStackTrace();
+
         }
     }
 
@@ -84,9 +87,12 @@ public class AdverMain implements Commands {
                 System.out.println("Wrong phoneNumber or password");
             }
 
-        } catch (ArrayIndexOutOfBoundsException | IOException | ClassNotFoundException e) {
+        } catch (ArrayIndexOutOfBoundsException | ClassNotFoundException e) {
             System.out.println("Wrong Data!");
+        }catch (IOException e){
+            e.printStackTrace();
         }
+
     }
 
     private static void loginSuccess() throws IOException, ClassNotFoundException {
@@ -173,7 +179,7 @@ public class AdverMain implements Commands {
             dataStorage.add(item);
             System.out.println("Item was successfully added");
         } catch (IOException e) {
-            e.getMessage();
+            e.printStackTrace();
 
         }catch (NullPointerException e){
             System.out.println("Wrong Data!");
